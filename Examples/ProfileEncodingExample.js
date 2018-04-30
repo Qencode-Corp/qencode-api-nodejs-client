@@ -1,7 +1,7 @@
 const QencodeApiClient = require('qencode-api');
 
 const apiKey = "your_api_key_here";
-const transcodingProfiles = ["5adb0584aa43b", "5adb0584aacca", "5adb0584ab49e"];
+const transcodingProfiles = ["5adb0584aa43b", "5adb0584aacca", "5adb0584ab49e"]; //replace with your profile IDs
 const transferMethod = null;
 const videoUrl = "https://servername/folder/video.mp4";
 const payload = null;
