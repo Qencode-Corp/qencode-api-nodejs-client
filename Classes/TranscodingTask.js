@@ -20,9 +20,14 @@ class TranscodingTask {
 
         let parameters = {
             task_token: this.taskToken,
-            uri: uri,
             profiles: transcodingProfiles
         };
+    
+        if(Array.isArray(uri)){
+            parameters.stitch = JSON.stringify(uri);
+        }else{
+            parameters.uri = uri;
+        }   
     
         if (transferMethod != null) {
             parameters.transfer_method = transferMethod;
@@ -52,6 +57,11 @@ class TranscodingTask {
     }
 
     StartCustom(taskParams, payload = null){
+
+        if(Array.isArray(taskParams.source)){
+            taskParams.stitch = taskParams.source;
+            taskParams.source = undefined;
+        }             
 
         let query = { query: taskParams };
 

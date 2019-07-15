@@ -3,7 +3,21 @@ const QencodeApiClient = require('qencode-api');
 const apiKey = "your_api_key_here";
 const transcodingProfiles = ["5adb0584aa43b", "5adb0584aacca", "5adb0584ab49e"]; //replace with your profile IDs
 const transferMethod = null;
-const videoUrl = "https://servername/folder/video.mp4";
+
+// using one video as a source
+// const videoUrl = "https://servername/folder/video.mp4";
+
+// using several videos as a source for stitching
+const videoUrl = [
+    "https://servername/folder/video1.mp4", 
+    "hhttps://servername/folder/video2.mp4",
+    {
+       "url":"https://servername/folder/video3.mp4", 
+       "start_time":"0.01567", 
+       "duration":"0.575"
+    }
+];
+
 const payload = null;
 const OutputPathVariables = null;
 

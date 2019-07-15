@@ -4,7 +4,21 @@ const apiKey = "your_api_key_here";
 const s3_path = "s3://s3-yourRegion.amazonaws.com/bucketname";
 const s3_key = "youS3Key";
 const s3_secret = "yourS3secret";
-const videoUrl = "https://servername/folder/video.mp4";
+
+// using one video as a source
+// const videoUrl = "https://servername/folder/video.mp4";
+
+// using several videos as a source for stitching
+const videoUrl = [
+    "https://servername/folder/video1.mp4", 
+    "hhttps://servername/folder/video2.mp4",
+    {
+       "url":"https://servername/folder/video3.mp4", 
+       "start_time":"0.01567", 
+       "duration":"0.575"
+    }
+];
+
 const payload = null;
 
 let transcodingParams = {};
