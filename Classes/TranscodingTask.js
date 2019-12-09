@@ -94,6 +94,10 @@ class TranscodingTask {
 
         this.lastStatus = response.statuses[this.taskToken];
 
+        if(this.lastStatus.status_url){
+            this.statusUrl = this.lastStatus.status_url;
+        }        
+
         return this.lastStatus;
     }
 
