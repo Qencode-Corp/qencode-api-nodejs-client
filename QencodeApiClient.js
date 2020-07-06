@@ -34,7 +34,7 @@ class QencodeApiClient {
         return new TranscodingTask(this, response.task_token);;
     }
 
-    Request(path, parameters){
+    Request(path, parameters, statusUrl){
 
         this.lastResponseRaw = null;
         this.lastResponse = null;
@@ -47,6 +47,10 @@ class QencodeApiClient {
             requestUrl = this.url + this.version + "/" + path;
         }
 
+        // statusUrl is optional, must be used as requestUrl if provided
+        if(statusUrl){
+            requestUrl = statusUrl
+        }        
 
         if (parameters != null && !(typeof parameters === 'string')){
             // convert parameters to string like 'api_key=5adb0584aa29f'

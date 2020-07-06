@@ -90,7 +90,7 @@ class TranscodingTask {
             "task_tokens[]": this.taskToken
         };        
 
-        let response = this.api.Request("status", parameters);
+        let response = this.api.Request("status", parameters, this.statusUrl);
 
         this.lastStatus = response.statuses[this.taskToken];
 
