@@ -54,7 +54,7 @@ class QencodeApiClient {
 
     CreateTask(){
         let response = this.Request("create_task", {token: this.AccessToken });
-        return new TranscodingTask(this, response.task_token);;
+        return new TranscodingTask(this, response.task_token, response.upload_url);
     }
 
     Request(path, parameters, statusUrl){

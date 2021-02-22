@@ -2,10 +2,11 @@ const querystring = require('querystring');
 
 class TranscodingTask {
 
-    constructor(api, taskToken){
+    constructor(api, taskToken, uploadUrl){
         this.api = api;  
         this.taskToken = taskToken;       
         this.statusUrl = null;
+        this.uploadUrl = uploadUrl;
 
         this.StartTime;
         this.Duration;      
