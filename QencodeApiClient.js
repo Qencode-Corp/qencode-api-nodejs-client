@@ -6,7 +6,31 @@ const TranscodingTask = require('./Classes/TranscodingTask');
 
 class QencodeApiClient {
 
-    constructor(key){
+    constructor(options){
+        let key = null;
+        let endpoint = "https://api.qencode.com/";
+        this.version = "v1";
+        let optionsType = Object.prototype.toString.call(options);
+        if (optionsType === '[object String]') {
+            key = options;
+        }
+        else {
+            if (!('key' in options)) {
+                throw new Error("You should provide API Key value when initializing API client!\nExample: const qencodeApiClient = new QencodeApiClient({key: 'your API key'});");
+            }
+            else {
+                key = options.key;
+                if ('endpoint' in options) {
+                    endpoint = options.endpoint.trim();
+                    if (! endpoint.endsWith('/')) {
+                        endpoint += '/';
+                    }
+                }
+                if ('version' in options) {
+                    this.version = options.version.trim();
+                }
+            }
+        }
 
         if(key.length < 12) {
             throw new Error("Missing or invalid Qencode project api key!");
@@ -14,8 +38,7 @@ class QencodeApiClient {
 
         this.Key = key;
         this.AccessToken = null;
-        this.url = "https://api.qencode.com/";
-        this.version = "v1";
+        this.url = endpoint;
         this.USER_AGENT = "Qencode NODE API SDK 1.0";
         this.ConnectTimeout = 20;
         this.lastResponseRaw = null;
