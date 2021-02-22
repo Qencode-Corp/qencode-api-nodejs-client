@@ -13,6 +13,10 @@ Instantiate Qencode API Client:
 
     const qencodeApiClient = new QencodeApiClient(apiKey);
 
+Or:
+
+    const qencodeApiClient = new QencodeApiClient({key: apiKey, endpoint: 'https://api-us-west.qencode.com'});
+
 Create a new job:
 
 ```javascript
