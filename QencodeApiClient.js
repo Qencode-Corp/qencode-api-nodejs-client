@@ -53,7 +53,20 @@ class QencodeApiClient {
     }
 
     CreateTask(){
-        let response = this.Request("create_task", {token: this.AccessToken });
+        let response = null;
+        while (1) {
+            try {
+                response = this.Request("create_task", {token: this.AccessToken});
+                break;
+            }
+            catch (err) {
+                if (err.message == "Token not found") {
+                    // console.log("Refreshing access token...");
+                    this.getAccessToken();
+                }
+                else throw(err);
+            }
+        }
         return new TranscodingTask(this, response.task_token, response.upload_url);
     }
 
