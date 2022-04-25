@@ -11,7 +11,7 @@ const s3_secret = "yourS3secret";
 // using several videos as a source for stitching
 const videoUrl = [
     "https://servername/folder/video1.mp4", 
-    "hhttps://servername/folder/video2.mp4",
+    "https://servername/folder/video2.mp4",
     {
        "url":"https://servername/folder/video3.mp4", 
        "start_time":"0.01567", 
