@@ -94,8 +94,11 @@ class TranscodingTask {
         let response = this.api.Request("status", parameters, this.statusUrl);
 
         this.lastStatus = response.statuses[this.taskToken];
-
-        if(this.lastStatus.status_url){
+        if (this.lastStatus == null) {
+            this.statusUrl = this.api.url + this.api.version + "/status"
+            return this.GetStatus()
+        }
+        if(this.lastStatus && this.lastStatus.status_url){
             this.statusUrl = this.lastStatus.status_url;
         }        
 
