@@ -1,5 +1,3 @@
-const querystring = require('querystring');
-
 class TranscodingTask {
 
     constructor(api, taskToken, uploadUrl){
@@ -13,7 +11,7 @@ class TranscodingTask {
         this.lastStatus
     }    
 
-    Start(transcodingProfiles, uri, transferMethod = null, payload = null, OutputPathVariables = null){
+    async Start(transcodingProfiles, uri, transferMethod = null, payload = null, OutputPathVariables = null){
 
         if(Array.isArray(transcodingProfiles)){
             transcodingProfiles = transcodingProfiles.join();
@@ -50,14 +48,14 @@ class TranscodingTask {
             parameters.output_path_variables = JSON.stringify(OutputPathVariables);
         }
 
-        let response = this.api.Request("start_encode", parameters);
+        let response = await this.api.Request("start_encode", parameters);
 
         this.statusUrl = response.status_url;
 
         return response;
     }
 
-    StartCustom(taskParams, payload = null){
+    async StartCustom(taskParams, payload = null){
 
         if(Array.isArray(taskParams.source)){
             taskParams.stitch = taskParams.source;
@@ -80,22 +78,25 @@ class TranscodingTask {
         return this._do_request("start_encode2", parameters);;
     }
 
-    _do_request(methodName, parameters){
-        let response = this.api.Request(methodName, parameters);
+    async _do_request(methodName, parameters){
+        let response = await this.api.Request(methodName, parameters);
         this.statusUrl = response.status_url;
         return response;
     }
 
-    GetStatus(){
+    async GetStatus(){
         let parameters = {
             "task_tokens[]": this.taskToken
         };        
 
-        let response = this.api.Request("status", parameters, this.statusUrl);
+        let response = await this.api.Request("status", parameters, this.statusUrl);
 
         this.lastStatus = response.statuses[this.taskToken];
-
-        if(this.lastStatus.status_url){
+        if (this.lastStatus == null) {
+            this.statusUrl = this.api.url + this.api.version + "/status"
+            return this.GetStatus()
+        }
+        if(this.lastStatus && this.lastStatus.status_url){
             this.statusUrl = this.lastStatus.status_url;
         }        
 

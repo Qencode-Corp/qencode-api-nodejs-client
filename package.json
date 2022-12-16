@@ -24,10 +24,10 @@
   "_spec": "qencode-api",
   "_where": "/Users/nikyer/projects/qencode/sdk/qencode-api-node-client",
   "author": "",
-  "bundleDependencies": false,
+  "bundleDependencies": [],
   "dependencies": {
-    "querystring": "^0.2.0",
-    "sync-request": "^6.0.0"
+    "axios": "^1.2.1",
+    "querystring": "^0.2.1"
   },
   "deprecated": false,
   "description": "",
