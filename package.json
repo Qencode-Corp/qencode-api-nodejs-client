@@ -1,6 +1,5 @@
 {
   "_from": "qencode-api",
-  "_id": "qencode-api@1.0.0",
   "_inBundle": false,
   "_integrity": "sha512-uIhYiCdZQBXYmbHIzsIdr6eJidfB7lSBkmN8NCMg9NPU0DPRFxewPhQQOt6HilZCF0J+acwrcG/RN6iykhpp8A==",
   "_location": "/qencode-api",
@@ -37,5 +36,5 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "2.1.6"
+  "version": "3.0.0"
 }
