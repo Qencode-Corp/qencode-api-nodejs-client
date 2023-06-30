@@ -1,15 +1,20 @@
-const QencodeApiClient = require('qencode-api');
+(async function () {
 
-const apiKey = "your_api_key_here";
-const taskToken = "your_job_id_here";
+    const QencodeApiClient = require('qencode-api');
 
-let parameters = {
-    "task_tokens[]": taskToken
-};
+    const apiKey = "your_api_key_here";
+    const taskToken = "your_job_id_here";
 
-const qencodeApiClient = new QencodeApiClient(apiKey);
-let response = qencodeApiClient.Request("status", parameters, qencodeApiClient.url + '/v1/status');
+    let parameters = {
+        "task_tokens[]": taskToken
+    };    
 
-let status = response.statuses[taskToken];
+    const qencodeApiClient = await new QencodeApiClient(apiKey);
+    
+    let response = await qencodeApiClient.Request("status", parameters, qencodeApiClient.url + '/v1/status');
+    
+    let status = response.statuses[taskToken];    
 
-console.log(status);
+    console.log("status: ", status)
+
+})();

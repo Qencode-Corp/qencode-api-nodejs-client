@@ -1,12 +1,13 @@
-
-const request = require('sync-request');
+const axios = require('axios');
 const querystring = require('querystring');
 
 const TranscodingTask = require('./Classes/TranscodingTask');
 
 class QencodeApiClient {
+    constructor(options) {
 
-    constructor(options){
+      return (async () => {
+
         let key = null;
         let endpoint = "https://api.qencode.com/";
         this.version = "v1";
@@ -43,34 +44,44 @@ class QencodeApiClient {
         this.ConnectTimeout = 20;
         this.lastResponseRaw = null;
         this.lastResponse = null;    
-        this.getAccessToken();      
-    }    
 
-
-    getAccessToken(){
-        let response = this.Request("access_token", {api_key: this.Key });
-        this.AccessToken = response.token;
+        // Call async functions here
+        await this.getAccessToken(); 
+    
+        // Constructors return `this` implicitly, but this is an IIFE, so
+        // return `this` explicitly (else we'd return an empty object).
+        return this;
+      })();
     }
 
-    CreateTask(){
+    async getAccessToken(){
+        let response = await this.Request("access_token", {api_key: this.Key });
+        this.AccessToken = response.token;
+    }   
+    
+    async getTemplates(){
+        let response = await this.Request("request_templates", {api_key: this.Key });
+        return response.templates;
+    }    
+    
+    async CreateTask(){
         let response = null;
         while (1) {
             try {
-                response = this.Request("create_task", {token: this.AccessToken});
+                response = await this.Request("create_task", {token: this.AccessToken});
                 break;
             }
             catch (err) {
                 if (err.message == "Token not found") {
-                    // console.log("Refreshing access token...");
-                    this.getAccessToken();
+                    await this.getAccessToken();
                 }
                 else throw(err);
             }
         }
         return new TranscodingTask(this, response.task_token, response.upload_url);
-    }
+    }    
 
-    Request(path, parameters, statusUrl){
+    async Request(path, parameters, statusUrl){
 
         this.lastResponseRaw = null;
         this.lastResponse = null;
@@ -92,22 +103,26 @@ class QencodeApiClient {
             // convert parameters to string like 'api_key=5adb0584aa29f'
             parameters = querystring.stringify(parameters);        
         }  
+    
+        try {
 
-
-        try{
-            this.lastResponseRaw = request(
-                'POST', 
+            this.lastResponseRaw = await axios.post(
                 requestUrl,
+                parameters,
                 {
-                    headers: {'content-type': 'application/x-www-form-urlencoded'},                
-                    body: parameters
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    }                    
                 }
+                
             );
+    
+
         } catch (err) {
             throw new Error("Error executing request to url: " + requestUrl, err);
-        }
+        }        
 
-        let response = JSON.parse(this.lastResponseRaw.getBody('utf8'));
+        let response = this.lastResponseRaw.data;
     
         if (response == null || response.error == null){
             throw new Error("Invalid API response", this.lastResponseRaw);
@@ -121,6 +136,5 @@ class QencodeApiClient {
     }
 
 }
-
 
 module.exports = QencodeApiClient;
