@@ -1,7 +1,20 @@
 const axios = require('axios');
 const querystring = require('querystring');
+const axiosRetry = require('axios-retry');
 
 const TranscodingTask = require('./Classes/TranscodingTask');
+
+// Set the retry logic
+axiosRetry(axios, {
+    retries: 20, 
+    retryDelay: (retryCount) => {
+      return 3000; // time interval between retries
+    },
+    // retry on Network Error and 5xx responses
+    retryCondition: (error) => {
+      return axiosRetry.isNetworkOrIdempotentRequestError(error) || error.code === 'ECONNABORTED';
+    },
+  });
 
 class QencodeApiClient {
     constructor(options) {
@@ -103,24 +116,22 @@ class QencodeApiClient {
             // convert parameters to string like 'api_key=5adb0584aa29f'
             parameters = querystring.stringify(parameters);        
         }  
-    
+        
         try {
-
             this.lastResponseRaw = await axios.post(
                 requestUrl,
                 parameters,
                 {
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded'
-                    }                    
+                    },                    
+                    timeout: this.ConnectTimeout * 1000 
                 }
                 
             );
-    
-
         } catch (err) {
             throw new Error("Error executing request to url: " + requestUrl, err);
-        }        
+        }
 
         let response = this.lastResponseRaw.data;
     
