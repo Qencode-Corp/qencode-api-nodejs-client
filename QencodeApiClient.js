@@ -3,6 +3,10 @@ const querystring = require('querystring');
 
 const TranscodingTask = require('./Classes/TranscodingTask');
 
+function delay(time) {
+    return new Promise(resolve => setTimeout(resolve, time));
+} 
+
 class QencodeApiClient {
     constructor(options) {
 
@@ -80,9 +84,10 @@ class QencodeApiClient {
         }
         return new TranscodingTask(this, response.task_token, response.upload_url);
     }    
-
-    async Request(path, parameters, statusUrl){
-
+    
+    
+    async Request(path, parameters, statusUrl){    
+   
         this.lastResponseRaw = null;
         this.lastResponse = null;
 
@@ -103,25 +108,32 @@ class QencodeApiClient {
             // convert parameters to string like 'api_key=5adb0584aa29f'
             parameters = querystring.stringify(parameters);        
         }  
-    
-        try {
-
-            this.lastResponseRaw = await axios.post(
-                requestUrl,
-                parameters,
-                {
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                    }                    
-                }
+        
+        let retry = 20;
+        const retryDelay = 3000;
                 
-            );
-    
-
-        } catch (err) {
-            throw new Error("Error executing request to url: " + requestUrl, err);
-        }        
-
+        for (let i = 0; i < retry; i++) {
+            try {
+                this.lastResponseRaw = await axios.post(
+                    requestUrl,
+                    parameters,
+                    {
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        timeout: this.ConnectTimeout * 1000
+                    }
+                );
+                break;
+            } catch (err) {
+                if(i === retry - 1) {
+                    throw new Error("All attempts to execute request failed.");
+                }
+                console.error(`Error executing request to url: ${requestUrl} on attempt ${i + 1}. Retrying in ${retryDelay / 1000} seconds...`);
+                await delay(retryDelay);
+            }
+        }
+        
         let response = this.lastResponseRaw.data;
     
         if (response == null || response.error == null){
