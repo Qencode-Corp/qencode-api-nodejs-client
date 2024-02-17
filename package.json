@@ -32,6 +32,7 @@
   "description": "",
   "license": "ISC",
   "main": "QencodeApiClient.js",
+  "types": "QencodeApiClient.d.ts",
   "name": "qencode-api",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
