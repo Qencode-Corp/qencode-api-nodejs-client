@@ -3,8 +3,15 @@
   const QencodeApiClient = require('qencode-api');
 
   const apiKey = "your_api_key_here";
-  
-  const payload = null;
+
+  // You can send any string as a payload, but JSON is most common case
+  const payloadObject = {
+    videoId: '3874239842932332',
+    previewFilename: 'My file name'
+  };
+
+  // in case your payload is JSON you need to stringify it first
+  const payload = JSON.stringify(payloadObject); 
   
   let transcodingParams = {
       "source": [
