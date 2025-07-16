@@ -1,40 +1,10 @@
 {
-  "_from": "qencode-api",
-  "_inBundle": false,
-  "_integrity": "sha512-uIhYiCdZQBXYmbHIzsIdr6eJidfB7lSBkmN8NCMg9NPU0DPRFxewPhQQOt6HilZCF0J+acwrcG/RN6iykhpp8A==",
-  "_location": "/qencode-api",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "tag",
-    "registry": true,
-    "raw": "qencode-api",
-    "name": "qencode-api",
-    "escapedName": "qencode-api",
-    "rawSpec": "",
-    "saveSpec": null,
-    "fetchSpec": "latest"
-  },
-  "_requiredBy": [
-    "#USER",
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/qencode-api/-/qencode-api-1.0.0.tgz",
-  "_shasum": "6e7cf66a97d6c5696b98fe3cec11e4da3b96d8bf",
-  "_spec": "qencode-api",
-  "_where": "/Users/nikyer/projects/qencode/sdk/qencode-api-node-client",
-  "author": "",
-  "bundleDependencies": [],
-  "dependencies": {
-    "axios": "^1.2.1",
-    "querystring": "^0.2.1"
-  },
-  "deprecated": false,
-  "description": "",
-  "license": "ISC",
-  "main": "QencodeApiClient.js",
   "name": "qencode-api",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "version": "3.0.1"
+  "version": "3.0.2",
+  "description": "Node.js SDK for the Qencode video transcoding API",
+  "main": "QencodeApiClient.js",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.0"
+  }
 }
