@@ -1,6 +1,6 @@
 {
   "name": "qencode-api",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Node.js SDK for the Qencode video transcoding API",
   "main": "QencodeApiClient.js",
   "license": "ISC",

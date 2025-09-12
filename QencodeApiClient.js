@@ -1,4 +1,5 @@
 const axios = require('axios');
+const querystring = require('querystring');
 
 const TranscodingTask = require('./Classes/TranscodingTask');
 
@@ -105,7 +106,7 @@ class QencodeApiClient {
 
         if (parameters != null && !(typeof parameters === 'string')){
             // convert parameters to string like 'api_key=5adb0584aa29f'
-            parameters = new URLSearchParams(parameters).toString();      
+            parameters = querystring.stringify(parameters);            
         }  
         
         let retry = 20;
