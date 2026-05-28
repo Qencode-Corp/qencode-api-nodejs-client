@@ -1,0 +1,69 @@
+AccessToken:  4f6cb6a08c1ee3153c3342519c8fcebe
+transcodingParams:  {
+  query: {
+    format: [ [Object] ],
+    source: 'https://nyc3.digitaloceanspaces.com/qencode/bbb_12s.mp4'
+  }
+}
+Created new task:  6d47f501fd982049990e8d63f9c4a3bf
+Status URL:  https://prod-nyc3-1-api-do.qencode.com/v1/status
+task: 6d47f501fd982049990e8d63f9c4a3bf | status: encoding | progress: 0
+task: 6d47f501fd982049990e8d63f9c4a3bf | status: encoding | progress: 0
+task: 6d47f501fd982049990e8d63f9c4a3bf | status: completed | progress: 100
+AccessToken:  39710de1cbd311ff03d06d4ac467fa81
+transcodingParams:  {
+  query: {
+    format: [ [Object], [Object], [Object] ],
+    encoder_version: '2',
+    source: 'https://nyc3.s3.qencode.com/qencode/samples/1080-sample.mov'
+  }
+}
+Created new task:  75b71a46f8efe7b5826029ac55b4e81e
+Status URL:  https://prod-sfo2-1-api-do.qencode.com/v1/status
+task: 75b71a46f8efe7b5826029ac55b4e81e | status: downloading | progress: null
+task: 75b71a46f8efe7b5826029ac55b4e81e | status: encoding | progress: 0
+task: 75b71a46f8efe7b5826029ac55b4e81e | status: encoding | progress: 5
+task: 75b71a46f8efe7b5826029ac55b4e81e | status: encoding | progress: 48
+task: 75b71a46f8efe7b5826029ac55b4e81e | status: encoding | progress: 84.33333333333333
+task: 75b71a46f8efe7b5826029ac55b4e81e | status: encoding | progress: 92.66666666666667
+task: 75b71a46f8efe7b5826029ac55b4e81e | status: encoding | progress: 99
+task: 75b71a46f8efe7b5826029ac55b4e81e | status: completed | progress: 100
+AccessToken:  c610716438038ae3a4e52df6734bc565
+transcodingParams:  {
+  query: {
+    format: [ [Object], [Object] ],
+    encoder_version: '2',
+    source: 'https://nyc3.s3.qencode.com/qencode/samples/1080-sample.mov'
+  }
+}
+Created new task:  acccb106ba8950696993146765936eba
+Status URL:  https://prod-nyc3-1-api-do.qencode.com/v1/status
+task: acccb106ba8950696993146765936eba | status: downloading | progress: null
+task: acccb106ba8950696993146765936eba | status: downloading | progress: null
+task: acccb106ba8950696993146765936eba | status: downloading | progress: null
+task: acccb106ba8950696993146765936eba | status: downloading | progress: null
+task: acccb106ba8950696993146765936eba | status: encoding | progress: 0
+task: acccb106ba8950696993146765936eba | status: encoding | progress: 25
+task: acccb106ba8950696993146765936eba | status: encoding | progress: 52
+task: acccb106ba8950696993146765936eba | status: encoding | progress: 70
+task: acccb106ba8950696993146765936eba | status: encoding | progress: 94
+task: acccb106ba8950696993146765936eba | status: encoding | progress: 100
+task: acccb106ba8950696993146765936eba | status: completed | progress: 100
+AccessToken:  39f4d31e8dcf3aa62184caf7ec511662
+transcodingParams:  {
+  query: {
+    format: [ [Object] ],
+    encoder_version: '2',
+    source: 'https://nyc3.s3.qencode.com/qencode/samples/Sintel.2010.720p.mkv'
+  }
+}
+Created new task:  8dac32ca3288aa7cc2354e966e4e86a2
+Status URL:  https://prod-sfo2-1-api-do.qencode.com/v1/status
+task: 8dac32ca3288aa7cc2354e966e4e86a2 | status: downloading | progress: null
+task: 8dac32ca3288aa7cc2354e966e4e86a2 | status: downloading | progress: null
+task: 8dac32ca3288aa7cc2354e966e4e86a2 | status: encoding | progress: 0
+task: 8dac32ca3288aa7cc2354e966e4e86a2 | status: encoding | progress: 26
+task: 8dac32ca3288aa7cc2354e966e4e86a2 | status: encoding | progress: 98
+task: 8dac32ca3288aa7cc2354e966e4e86a2 | status: encoding | progress: 100
+task: 8dac32ca3288aa7cc2354e966e4e86a2 | status: encoding | progress: 100
+task: 8dac32ca3288aa7cc2354e966e4e86a2 | status: completed | progress: 100

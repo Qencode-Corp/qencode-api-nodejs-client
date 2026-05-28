@@ -1,0 +1,99 @@
+{
+  "status": "completed", 
+  "input_params": {
+    "query": {
+      "query": {
+        "source": "https://nyc3.digitaloceanspaces.com/qencode/bbb_12s.mp4", 
+        "format": [
+          {
+            "destination": {
+              "url": "s3://us-west.s3.qencode.com/test-qa-2022-11-09/UI/test001.mp4"
+            }, 
+            "height": "360", 
+            "audio_bitrate": 128, 
+            "video_codec": "libx264", 
+            "output": "mp4", 
+            "quality": 23
+          }
+        ]
+      }
+    }, 
+    "payload": null
+  }, 
+  "videos": [
+    {
+      "profile": null, 
+      "cost": {
+        "currency": "USD", 
+        "amount": "0.0000", 
+        "code": 840
+      }, 
+      "url": [], 
+      "bitrate": 520, 
+      "output_format": "mp4", 
+      "storage": [], 
+      "tag": "video-0-0", 
+      "meta": {
+        "resolution_width": 640, 
+        "audio_codec": "aac", 
+        "resolution_height": 360, 
+        "framerate": "60/1", 
+        "resolution": 360, 
+        "height": 360, 
+        "width": 640, 
+        "codec": "h264", 
+        "dar": "16:9", 
+        "aspect_ratio": 1, 
+        "sar": "1:1", 
+        "bitrate": "409665"
+      }, 
+      "error": true, 
+      "duration": "12.024", 
+      "error_description": "Error saving video: boto3_save error", 
+      "user_tag": null, 
+      "size": "0.781125"
+    }
+  ], 
+  "status_url": "https://api.qencode.com/v1/status", 
+  "percent": 100, 
+  "source_size": "6.22493", 
+  "audios": [], 
+  "duration": "12.083", 
+  "error_description": "Error saving video: boto3_save error", 
+  "error": 1, 
+  "images": [], 
+  "execution_log": {
+    "queue_begin": "2023-01-02 08:39:14", 
+    "queue_end": "2023-01-02 08:39:14", 
+    "save_begin": "2023-01-02 08:39:27", 
+    "create_timestamp": "2023-01-02 08:39:14", 
+    "save_end": "2023-01-02 08:39:31", 
+    "upload_end": "2023-01-02 08:39:15", 
+    "upload_begin": "2023-01-02 08:39:14", 
+    "encode_begin": "2023-01-02 08:39:15", 
+    "encode_end": "2023-01-02 08:39:27"
+  }, 
+  "source_meta": [
+    {
+      "eia_708": false, 
+      "rotate": null, 
+      "container": "mov", 
+      "dar": "16:9", 
+      "url": "https://nyc3.digitaloceanspaces.com/qencode/bbb_12s.mp4", 
+      "eia_608": false, 
+      "framerate": "60/1", 
+      "height": 1080, 
+      "width": 1920, 
+      "sample_rate": null, 
+      "audio_bitrate": 320000, 
+      "audio_codec": "ac3", 
+      "duration": "12.083", 
+      "video_codec": "h264", 
+      "channels_number": null, 
+      "bitrate": "4017558", 
+      "size": "6.22493"
+    }
+  ], 
+  "payload": null, 
+  "api_version": "v1"
+}

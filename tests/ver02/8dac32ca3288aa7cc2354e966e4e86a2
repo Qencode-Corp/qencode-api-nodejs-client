@@ -1,0 +1,112 @@
+{
+  "status": "completed", 
+  "input_params": {
+    "query": {
+      "query": {
+        "source": "https://nyc3.s3.qencode.com/qencode/samples/Sintel.2010.720p.mkv", 
+        "encoder_version": "2", 
+        "format": [
+          {
+            "destination": {
+              "url": "s3://nyc3.digitaloceanspaces.com/qencode3/regression_tests/contentful/output1.mp4", 
+              "secret": "******", 
+              "key": "******", 
+              "permissions": "public-read"
+            }, 
+            "height": "120", 
+            "audio_bitrate": 128, 
+            "video_codec": "libx264", 
+            "output": "mp4", 
+            "quality": 23
+          }
+        ]
+      }
+    }, 
+    "payload": null
+  }, 
+  "videos": [
+    {
+      "profile": null, 
+      "cost": {
+        "currency": "USD", 
+        "amount": "0.0296", 
+        "code": 840
+      }, 
+      "url": "https://nyc3.digitaloceanspaces.com/qencode3/regression_tests/contentful/output1.mp4", 
+      "bitrate": 242, 
+      "output_format": "mp4", 
+      "storage": {
+        "format": "mp4", 
+        "timestamp": "2023-01-04 13:26:05", 
+        "bucket": "qencode3", 
+        "host": "nyc3.digitaloceanspaces.com", 
+        "expire": null, 
+        "key": "regression_tests/contentful/output1.mp4", 
+        "scheme": "https", 
+        "type": "custom_s3", 
+        "port": ""
+      }, 
+      "tag": "video-0-0-0", 
+      "meta": {
+        "resolution_width": 282, 
+        "audio_codec": "aac", 
+        "resolution_height": 120, 
+        "framerate": "24/1", 
+        "height": 120, 
+        "width": 282, 
+        "codec": "h264", 
+        "dar": "40:17", 
+        "aspect_ratio": 1.0012515644556, 
+        "sar": "800:799", 
+        "bitrate": "151732"
+      }, 
+      "error": false, 
+      "duration": "888.048", 
+      "error_description": null, 
+      "user_tag": null, 
+      "size": "26.8275"
+    }
+  ], 
+  "status_url": "https://api.qencode.com/v1/status", 
+  "percent": 100, 
+  "source_size": "642.715", 
+  "audios": [], 
+  "duration": "888.032", 
+  "error_description": null, 
+  "error": 0, 
+  "images": [], 
+  "execution_log": {
+    "queue_begin": "2023-01-04 13:20:40", 
+    "queue_end": "2023-01-04 13:20:40", 
+    "save_begin": null, 
+    "create_timestamp": "2023-01-04 13:20:40", 
+    "save_end": "2023-01-04 13:22:00", 
+    "upload_end": "2023-01-04 13:21:07", 
+    "upload_begin": "2023-01-04 13:20:41", 
+    "encode_begin": "2023-01-04 13:21:08", 
+    "encode_end": null
+  }, 
+  "source_meta": [
+    {
+      "eia_708": false, 
+      "rotate": null, 
+      "container": "matroska", 
+      "dar": "40:17", 
+      "url": "https://nyc3.s3.qencode.com/qencode/samples/Sintel.2010.720p.mkv", 
+      "eia_608": false, 
+      "framerate": "24/1", 
+      "height": 544, 
+      "width": 1280, 
+      "sample_rate": null, 
+      "audio_bitrate": 640000, 
+      "audio_codec": "ac3", 
+      "duration": "888.032", 
+      "video_codec": "h264", 
+      "channels_number": null, 
+      "bitrate": null, 
+      "size": "642.715"
+    }
+  ], 
+  "payload": null, 
+  "api_version": "v1"
+}

@@ -1,0 +1,156 @@
+{
+  "status": "completed", 
+  "input_params": {
+    "query": {
+      "query": {
+        "source": "https://nyc3.s3.qencode.com/qencode/samples/1080-sample.mov", 
+        "encoder_version": "2", 
+        "format": [
+          {
+            "destination": {
+              "url": "s3://nyc3.digitaloceanspaces.com/qencode3/contentful/test2", 
+              "secret": "******", 
+              "key": "******"
+            }, 
+            "height": 2160, 
+            "audio_bitrate": 128, 
+            "video_codec": "libx264", 
+            "output": "mp4", 
+            "quality": 23
+          }, 
+          {
+            "destination": {
+              "url": "s3://nyc3.digitaloceanspaces.com/qencode3/contentful/test2", 
+              "secret": "******", 
+              "key": "******"
+            }, 
+            "height": "270", 
+            "width": "270", 
+            "time": "0.1", 
+            "output": "thumbnail", 
+            "image_format": "jpg"
+          }
+        ]
+      }
+    }, 
+    "payload": null
+  }, 
+  "videos": [
+    {
+      "profile": null, 
+      "cost": {
+        "currency": "USD", 
+        "amount": "0.0043", 
+        "code": 840
+      }, 
+      "url": "https://nyc3.digitaloceanspaces.com/qencode3/contentful/test2", 
+      "bitrate": 8602, 
+      "output_format": "mp4", 
+      "storage": {
+        "format": "mp4", 
+        "timestamp": "2023-01-04 13:23:43", 
+        "bucket": "qencode3", 
+        "host": "nyc3.digitaloceanspaces.com", 
+        "expire": null, 
+        "key": "contentful/test2", 
+        "scheme": "https", 
+        "type": "custom_s3", 
+        "port": ""
+      }, 
+      "tag": "video-0-0-0", 
+      "meta": {
+        "resolution_width": 1920, 
+        "audio_codec": "aac", 
+        "resolution_height": 1080, 
+        "framerate": "24000/1001", 
+        "height": 1080, 
+        "width": 1920, 
+        "codec": "h264", 
+        "dar": "16:9", 
+        "aspect_ratio": 1, 
+        "sar": "1:1", 
+        "bitrate": "9607064"
+      }, 
+      "error": false, 
+      "duration": "64.877", 
+      "error_description": null, 
+      "user_tag": null, 
+      "size": "69.7614"
+    }
+  ], 
+  "status_url": "https://api.qencode.com/v1/status", 
+  "percent": 100, 
+  "source_size": "768.831", 
+  "audios": [], 
+  "duration": "64.8567", 
+  "error_description": null, 
+  "error": 0, 
+  "images": [
+    {
+      "profile": null, 
+      "cost": {
+        "currency": "USD", 
+        "amount": "0.0000", 
+        "code": 840
+      }, 
+      "url": "https://nyc3.digitaloceanspaces.com/qencode3/contentful/test2", 
+      "output_format": "thumbnail", 
+      "storage": {
+        "format": "image", 
+        "timestamp": "2023-01-04 13:23:43", 
+        "bucket": "qencode3", 
+        "host": "nyc3.digitaloceanspaces.com", 
+        "expire": null, 
+        "key": "contentful/test2", 
+        "scheme": "https", 
+        "type": "custom_s3", 
+        "port": ""
+      }, 
+      "meta": {
+        "height": 270, 
+        "width": 270, 
+        "time": 6.4856667, 
+        "time_fraction": 0.1, 
+        "format": "jpeg"
+      }, 
+      "error_description": null, 
+      "error": false, 
+      "tag": "image-0-0-0", 
+      "user_tag": null
+    }
+  ], 
+  "execution_log": {
+    "queue_begin": "2023-01-04 13:18:12", 
+    "queue_end": "2023-01-04 13:18:12", 
+    "save_begin": null, 
+    "create_timestamp": "2023-01-04 13:18:12", 
+    "save_end": "2023-01-04 13:19:58", 
+    "upload_end": "2023-01-04 13:18:51", 
+    "upload_begin": "2023-01-04 13:18:13", 
+    "encode_begin": "2023-01-04 13:18:51", 
+    "encode_end": null
+  }, 
+  "source_meta": [
+    {
+      "eia_708": false, 
+      "rotate": null, 
+      "container": "mov", 
+      "dar": null, 
+      "url": "https://nyc3.s3.qencode.com/qencode/samples/1080-sample.mov", 
+      "eia_608": false, 
+      "framerate": "24000/1001", 
+      "height": 1080, 
+      "width": 1920, 
+      "sample_rate": "48000", 
+      "audio_bitrate": 1536000, 
+      "audio_codec": "pcm_s16be", 
+      "duration": "64.8567", 
+      "video_codec": "prores", 
+      "channels_number": 2, 
+      "bitrate": "1536000", 
+      "size": "768.831"
+    }
+  ], 
+  "payload": null, 
+  "api_version": "v1"
+}

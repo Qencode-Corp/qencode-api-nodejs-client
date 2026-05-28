@@ -2,13 +2,16 @@ const fs = require("fs");
 const tus = require('tus-js-client');
 const QencodeApiClient = require('qencode-api');
 
-let path = '/path/to/your/local/video.mp4';
+//let path = '/path/to/your/local/video.mp4';
+let path = 'upload_test.mp4';
+
 //var file = fs.createReadStream(path);
 var size = fs.statSync(path).size;
 
-const apiKey = "your-API-key-here";
+const apiKey = "";
 
 const qencodeApiClient = new QencodeApiClient({key: apiKey, endpoint: 'https://api.qencode.com'});
+console.log("qencodeApiClient: ", qencodeApiClient);
 console.log("AccessToken: ", qencodeApiClient.AccessToken);
 
 let task = qencodeApiClient.CreateTask();

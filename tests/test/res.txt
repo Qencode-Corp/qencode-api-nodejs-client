@@ -1,0 +1,28 @@
+Created new task:  fed28ff758b8209630c6d56b46739a07
+	task - error (bucket not found?)
+	Error: Error saving video: boto3_save error
+
+Created new task:  6bd63069b0025e9f7fdb735c9b3c9753
+	job: ok, files 403
+		"url": "s3://nyc3.digitaloceanspaces.com/qencode3/contentful/test3/{uuid}/output.mp4", 
+        res:
+                "url": "https://nyc3.digitaloceanspaces.com/qencode3/contentful/test3/f3e4c1a88a7a11edad0fbe4358d00c1a/output.mp4", 
+        file exist, but need acl:
+              "permissions":"public-read"
+
+        s3cmd ls s3://qencode3/contentful/test3/f3e4c1a88a7a11edad0fbe4358d00c1a/
+                          DIR  s3://qencode3/contentful/test3/f3e4c1a88a7a11edad0fbe4358d00c1a/hls/
+2023-01-02 08:54     73150134  s3://qencode3/contentful/test3/f3e4c1a88a7a11edad0fbe4358d00c1a/output.mp4
+2023-01-02 08:53        19459  s3://qencode3/contentful/test3/f3e4c1a88a7a11edad0fbe4358d00c1a/preview.jpg
+	Task - ok, res file: ERROR 403: Forbidden
+
+Created new task:  c26aa6f51fedcb45a824549ecf47282b
+	job: incorrect output filenames, need acl:
+              "permissions":"public-read"
+	s3cmd ls -r s3://qencode3/contentful/test2
+2023-01-02 08:56     73150134  s3://qencode3/contentful/test2
+2023-01-02 12:05       308631  s3://qencode3/contentful/test2/12bdd6b4-5e6e-4b39-955d-22266db471e6.mp4
+2023-01-02 12:05         5175  s3://qencode3/contentful/test2/5a7db508-c642-4eaa-a377-c19dcfc76879.jpg
+		
+Created new task:  57f02164c88cc1fac4155e777fa321b4
+	job: OK, res file exist

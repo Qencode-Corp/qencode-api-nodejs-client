@@ -2,8 +2,8 @@
 
     const QencodeApiClient = require('qencode-api');
 
-    const apiKey = "your_api_key_here";
-    const taskToken = "your_job_id_here";
+    const apiKey = "5fed813c90bfa";
+    const taskToken = "8410dc828c8f5f987fe8dd906f7d407e";
 
     let parameters = {
         "task_tokens[]": taskToken

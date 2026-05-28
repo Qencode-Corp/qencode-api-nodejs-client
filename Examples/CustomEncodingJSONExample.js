@@ -2,23 +2,17 @@
 
   const QencodeApiClient = require('qencode-api');
 
-  const apiKey = "your_api_key_here";
+  const apiKey = "5fed813c90bfa";
   
   const payload = null;
   
   let transcodingParams = {
-      "source": [
-          "https://servername/folder/video1.mp4", 
-          "https://servername/folder/video1.mp4",
-          {
-             "url":"https://servername/folder/video1.mp4", 
-             "start_time":"0.01567", 
-             "duration":"0.575"
-          }
-      ],
+      "source": 
+      "https://nyc3.digitaloceanspaces.com/qencode/samples/bbb_sunflower_1080p_60fps_normal.mp4",
       "format": [
         {
           "output": "mp4",
+          "duration": "20",
           "size": "320x240",
           "video_codec": "libx264"
         }
@@ -48,7 +42,7 @@
           status = statusObject.status;
           progress = statusObject.percent;
           console.log(`task: ${task.taskToken} | status: ${status} | progress: ${progress}`);
-          await sleep(10000);
+          await sleep(1000);
       }
   }
   
